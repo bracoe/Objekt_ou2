@@ -67,6 +67,16 @@ public class MemoryRobotTest {
 	}
 	
 	@Test
+	public void testMoveAlgoritm() {
+		MemoryRobot memBot = new MemoryRobot(maze);
+		for(int i = 0; i < 21; i++) {
+			memBot.move();
+		}
+		assertTrue("memBot did not find goal position!",maze.isGoal(memBot.getCurrentPosition()));
+	}
+	
+	
+	@Test
 	public void testGoalCanBeFound() {
 		int moves = 0;
 		MemoryRobot memBot = new MemoryRobot(maze);

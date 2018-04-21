@@ -19,7 +19,10 @@ public class MemoryRobot extends Robot {
 	boolean goBack;
 	
 	/**
-	 * @param maze
+	 * Creates a robot using a maze to explore and creates a stack and a list
+	 * to be able to move afterwards. Also checks which position the robot will
+	 * move to during its' next move.
+	 * @param maze A maze for the robot to explore. 
 	 */
 	public MemoryRobot(Maze maze) {
 		super(maze);

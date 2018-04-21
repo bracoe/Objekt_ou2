@@ -3,12 +3,16 @@
  */
 
 /**
+ * This class extends the Robot class and gives it a unique move algorithm.
+ * This is done be using a right-hand metod.
  * @author Bram Coenen
  *
  */
 public class RightHandRuleRobot extends Robot {
 	String facing;
 	/**
+	 * Creates a robot using a right-hand algoritm. Requires a maze to move in
+	 * and set the deafault facing to north.
 	 * @param maze
 	 */
 	public RightHandRuleRobot(Maze maze) {
@@ -16,6 +20,10 @@ public class RightHandRuleRobot extends Robot {
 		facing = "north";
 	}
 	
+	/**
+	 * Tests if the robot can turn right from its current position.
+	 * @return boolean true if the robot was able to move, else false.
+	 */
 	private boolean goToRight() {
 		Position newPosition;
 		switch (facing) {
@@ -46,6 +54,10 @@ public class RightHandRuleRobot extends Robot {
 		return false;
 	}
 	
+	/**
+	 * Turns the robot counterclockwise and tests if it can move to the
+	 * position on the right.
+	 */
 	private void turnCounterClockwise() {
 		boolean moved = false;
 		Position newPosition;
@@ -79,6 +91,9 @@ public class RightHandRuleRobot extends Robot {
 		}
 	}
 	
+	/**
+	 * Implements the right-hand algorithm in order to move the robot.
+	 */
 	@Override
 	public void move() {
 		if(goToRight()){

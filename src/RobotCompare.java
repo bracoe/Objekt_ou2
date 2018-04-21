@@ -40,7 +40,7 @@ public class RobotCompare {
 	 * @return
 	 */
 	public static int testRightHandBot(Maze maze) {
-		System.out.println("Put a rightHandRobot in the maze");
+		System.out.println("Putting a rightHandRobot in the maze...");
 		int rightBotMoves = 0;
 		RightHandRuleRobot rightBot = new RightHandRuleRobot(maze);
 		while(!rightBot.hasReachedGoal()) {
@@ -56,7 +56,7 @@ public class RobotCompare {
 	 * @return
 	 */
 	public static int testMemBot(Maze maze) {
-		System.out.println("Put a MemoryRobot in the maze");
+		System.out.println("Putting a MemoryRobot in the maze...");
 		int memBotMoves = 0;
 		MemoryRobot memBot = new MemoryRobot(maze);
 		while(!memBot.hasReachedGoal()) {
@@ -78,18 +78,15 @@ public class RobotCompare {
 		Maze maze = null;
 		
 		try {
-			System.out.println("Reading file!");
+			System.out.println("Reading file...");
 			reader = new FileReader(fileName);
-			System.out.println("Constucting maze!");
 			maze = new Maze(reader);
-			System.out.println("Constucted maze!");
+			System.out.println("Constucted maze...");
 		}
 		finally {
 			try {
-				System.out.println("Close!");
 				if(reader != null) {
 					reader.close();
-					System.out.println("Filereader closed!");
 				}
 			}
 			finally {
