@@ -9,7 +9,9 @@
  *
  */
 public class RightHandRuleRobot extends Robot {
+	
 	String facing;
+	
 	/**
 	 * Creates a robot using a right-hand algoritm. Requires a maze to move in
 	 * and set the deafault facing to north.

@@ -91,7 +91,8 @@ public class Position {
 	}
 	
 	/**
-	 * 
+	 * Tests whether or no the two position objects are the same position.
+	 * As in they have the same x and y value.
 	 * @param o 
 	 * @return
 	 */

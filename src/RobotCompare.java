@@ -7,12 +7,18 @@ import java.io.Reader;
  */
 
 /**
+ * This class compares two robots in a given maze. The name of the maze file
+ * should be given as an input argument. It tries to create a RightHandRobot 
+ * and run it into the. Afterwards a MemoryRobot is constructed and also tested. 
  * @author Bram Coenen
  *
  */
 public class RobotCompare {
+	
 	/**
-	 * @param args
+	 * The main function which tries to constuct a maze from the given file.
+	 * Then calls on the test funtions.
+	 * @param args The name of the mazefile.
 	 */
 	public static void main(String[] args) {
 		
@@ -35,9 +41,10 @@ public class RobotCompare {
 	}
 	
 	/**
-	 * 
-	 * @param maze
-	 * @return
+	 * The function which constructs the RightHandRobot and calls on move until
+	 * this robot has found the goal.
+	 * @param maze A Maze where the robot should be tested in.
+	 * @return The number of moves it took for the robot.
 	 */
 	public static int testRightHandBot(Maze maze) {
 		System.out.println("Putting a rightHandRobot in the maze...");
@@ -51,9 +58,10 @@ public class RobotCompare {
 	}
 	
 	/**
-	 * 
-	 * @param maze
-	 * @return
+	 * The function which constructs the MemoryRobot and calls on move until
+	 * this robot has found the goal.
+	 * @param maze A Maze where the robot should be tested in.
+	 * @return The number of moves it took for the robot.
 	 */
 	public static int testMemBot(Maze maze) {
 		System.out.println("Putting a MemoryRobot in the maze...");
@@ -67,10 +75,12 @@ public class RobotCompare {
 	}
 	
 	/**
-	 * 
-	 * @param fileName
-	 * @return
-	 * @throws IOException
+	 * This funtion creates a Maze from the given file.
+	 * @param fileName A file to turn into a maze object.
+	 * @return A Maze for the robots to be tested in.
+	 * @throws IOException If the stream is not correct. Either it does not
+	 * contain a start position or goal position. Or the reader 
+	 * threw the exception.
 	 */
 	public static Maze readMazeFromFile(String fileName) throws IOException{
 		
