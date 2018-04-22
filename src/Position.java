@@ -17,8 +17,9 @@ public class Position {
 	 * Creates a new position with the given x and y-value.
 	 * @param x A value to set x to.
 	 * @param y A value to set y to.
+	 * @throws IndexOutOfBoundsException if the x or y value is negative.
 	 */
-	Position(int x, int y){
+	Position(int x, int y) throws IndexOutOfBoundsException{
 		if(x < 0 || y < 0) {
 			throw new IndexOutOfBoundsException("Got negative value!");
 		}
@@ -92,20 +93,26 @@ public class Position {
 	
 	/**
 	 * Tests whether or no the two position objects are the same position.
-	 * As in they have the same x and y value.
+	 * As in they have the same x and y value. If the object is null, it will
+	 * always be false.
 	 * @param o 
 	 * @return
 	 */
 	@Override
 	public boolean equals(Object o){
-		Position givenPosition = (Position) o;
-		return(this.hashCode() == givenPosition.hashCode());
+		if(o == null) {
+			return false;
+		}
+		else {
+			Position givenPosition = (Position) o;
+			return(this.hashCode() == givenPosition.hashCode());
+		}
 	}
 	
 	/**
 	 * Calculates the hashCode for a given position depending on x and y.
 	 * Due to the fact that the coordinates are always positive, 
-	 * Cantor pairing function can be used..
+	 * Cantor pairing function can be used.
 	 * @return int A unique positive integer depending on the x and y.
 	 */
 	@Override
